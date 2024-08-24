@@ -49,14 +49,16 @@ type MoveHippogonal struct {
 	YStep uint8
 }
 
-type MoveCastling struct {
-	KingPos Position
-	RookPos Position
-}
+/*
+I considered adding fields to this like King position, Rook position etc. In the end I decided against it.
+The amount of fields needed would be too big and for this specific move, modularity isn't that important.
+Castling behaviour should be hardcoded.
+*/
+type MoveCastling struct{}
 
 type MovePawnJump struct {
 	Position  Position
-	EnPassant Position 
+	EnPassant Position
 }
 
 type MovePattern struct {

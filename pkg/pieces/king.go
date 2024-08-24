@@ -17,78 +17,159 @@ func (self *King) GetType() defs.PieceType {
 }
 
 func (self *King) GetMoves() []defs.MovePattern {
-	return []defs.MovePattern{
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X - 1,
-					Y: self.Y - 1,
+	if self.HasMoved {
+		return []defs.MovePattern{
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X - 1,
+						Y: self.Y - 1,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X,
-					Y: self.Y - 1,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X,
+						Y: self.Y - 1,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X + 1,
-					Y: self.Y - 1,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X + 1,
+						Y: self.Y - 1,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X - 1,
-					Y: self.Y,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X - 1,
+						Y: self.Y,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X + 1,
-					Y: self.Y,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X + 1,
+						Y: self.Y,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X - 1,
-					Y: self.Y + 1,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X - 1,
+						Y: self.Y + 1,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X,
-					Y: self.Y + 1,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X,
+						Y: self.Y + 1,
+					},
 				},
 			},
-		},
-		{
-			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
-				Position: defs.Position{
-					X: self.X + 1,
-					Y: self.Y + 1,
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X + 1,
+						Y: self.Y + 1,
+					},
 				},
 			},
-		},
+		}
+	} else {
+		return []defs.MovePattern{
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X - 1,
+						Y: self.Y - 1,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X,
+						Y: self.Y - 1,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X + 1,
+						Y: self.Y - 1,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X - 1,
+						Y: self.Y,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X + 1,
+						Y: self.Y,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X - 1,
+						Y: self.Y + 1,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X,
+						Y: self.Y + 1,
+					},
+				},
+			},
+			{
+				MoveType: defs.Regular,
+				Pattern: defs.MoveJump{
+					Position: defs.Position{
+						X: self.X + 1,
+						Y: self.Y + 1,
+					},
+				},
+			},
+			{
+				MoveType: defs.MoveOnly,
+				Pattern:  defs.MoveCastling{},
+			},
+		}
 	}
 }
