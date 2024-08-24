@@ -19,7 +19,7 @@ func (self *Pawn) GetType() defs.PieceType {
 func (self *Pawn) GetMoves() []defs.MovePattern {
 	// Maybe this should be moved to move generator?
 	if self.Color {
-		if self.HasMoved {
+		if !self.HasMoved {
 			return []defs.MovePattern{
 				{
 					MoveType: defs.CheckAndCapture,
@@ -41,19 +41,14 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.MoveOnly,
-					Pattern: defs.MoveJump{
-						Position: defs.Position{
-							X: self.X,
-							Y: self.Y + 1,
-						},
-					},
-				},
-				{
-					MoveType: defs.MoveOnly,
-					Pattern: defs.MoveJump{
+					Pattern: defs.MovePawnJump{
 						Position: defs.Position{
 							X: self.X,
 							Y: self.Y + 2,
+						},
+						EnPassant: defs.Position{
+							X: self.X,
+							Y: self.Y + 1,
 						},
 					},
 				},
@@ -90,7 +85,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 			}
 		}
 	} else {
-		if self.HasMoved {
+		if !self.HasMoved {
 			return []defs.MovePattern{
 				{
 					MoveType: defs.CheckAndCapture,
@@ -112,19 +107,14 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.MoveOnly,
-					Pattern: defs.MoveJump{
-						Position: defs.Position{
-							X: self.X,
-							Y: self.Y - 1,
-						},
-					},
-				},
-				{
-					MoveType: defs.MoveOnly,
-					Pattern: defs.MoveJump{
+					Pattern: defs.MovePawnJump{
 						Position: defs.Position{
 							X: self.X,
 							Y: self.Y - 2,
+						},
+						EnPassant: defs.Position{
+							X: self.X,
+							Y: self.Y - 1,
 						},
 					},
 				},

@@ -202,6 +202,19 @@ func getDiagonalSlideMobility(move defs.MovePattern, IMap map[int64][]defs.Piece
 	return utils.IntMin(maxMobilityAddition, evaluation)
 }
 
+func getPawnJumpMobility(move defs.MovePattern, XYMap map[int64]map[int64]defs.Piece) int64 {
+	jump := move.Pattern.(defs.MovePawnJump)
+
+	var bonus int64 = 0
+	if XYMap[jump.EnPassant.X] == nil || XYMap[jump.EnPassant.X][jump.EnPassant.Y] == nil {
+		bonus += 1
+		if XYMap[jump.Position.X] == nil || XYMap[jump.Position.X][jump.Position.Y] == nil {
+			bonus += 2
+		}
+	}
+	return bonus
+}
+
 func getMobilityBonus(
 	piece defs.Piece,
 	XYMap map[int64]map[int64]defs.Piece,
@@ -219,6 +232,8 @@ func getMobilityBonus(
 			bonus += getJumpMobility(move, piece.GetColor(), XYMap)
 		case defs.MoveDiagonalSlide:
 			bonus += getDiagonalSlideMobility(move, IMap, JMap)
+		case defs.MovePawnJump:
+			bonus += getPawnJumpMobility(move, XYMap)
 		}
 	}
 	return bonus

@@ -49,9 +49,14 @@ type MoveHippogonal struct {
 	YStep uint8
 }
 
-type Castling struct {
+type MoveCastling struct {
 	KingPos Position
 	RookPos Position
+}
+
+type MovePawnJump struct {
+	Position  Position
+	EnPassant Position 
 }
 
 type MovePattern struct {
