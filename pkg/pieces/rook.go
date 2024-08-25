@@ -20,7 +20,7 @@ func (self *Rook) GetMoves() []defs.MovePattern {
 	return []defs.MovePattern{
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveSlide{
+			Pattern: defs.PatternSlide{
 				Start: defs.Position{
 					X: self.X,
 					Y: self.Y + 1,
@@ -30,7 +30,7 @@ func (self *Rook) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveSlide{
+			Pattern: defs.PatternSlide{
 				Start: defs.Position{
 					X: self.X,
 					Y: self.Y - 1,
@@ -40,7 +40,7 @@ func (self *Rook) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveSlide{
+			Pattern: defs.PatternSlide{
 				Start: defs.Position{
 					X: self.X - 1,
 					Y: self.Y,
@@ -50,7 +50,7 @@ func (self *Rook) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveSlide{
+			Pattern: defs.PatternSlide{
 				Start: defs.Position{
 					X: self.X + 1,
 					Y: self.Y,

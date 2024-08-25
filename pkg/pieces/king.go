@@ -21,7 +21,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 		return []defs.MovePattern{
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X - 1,
 						Y: self.Y - 1,
@@ -30,7 +30,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X,
 						Y: self.Y - 1,
@@ -39,7 +39,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X + 1,
 						Y: self.Y - 1,
@@ -48,7 +48,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X - 1,
 						Y: self.Y,
@@ -57,7 +57,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X + 1,
 						Y: self.Y,
@@ -66,7 +66,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X - 1,
 						Y: self.Y + 1,
@@ -75,7 +75,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X,
 						Y: self.Y + 1,
@@ -84,7 +84,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X + 1,
 						Y: self.Y + 1,
@@ -96,7 +96,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 		return []defs.MovePattern{
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X - 1,
 						Y: self.Y - 1,
@@ -105,7 +105,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X,
 						Y: self.Y - 1,
@@ -114,7 +114,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X + 1,
 						Y: self.Y - 1,
@@ -123,7 +123,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X - 1,
 						Y: self.Y,
@@ -132,7 +132,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X + 1,
 						Y: self.Y,
@@ -141,7 +141,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X - 1,
 						Y: self.Y + 1,
@@ -150,7 +150,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X,
 						Y: self.Y + 1,
@@ -159,7 +159,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.Regular,
-				Pattern: defs.MoveJump{
+				Pattern: defs.PatternJump{
 					Position: defs.Position{
 						X: self.X + 1,
 						Y: self.Y + 1,
@@ -168,7 +168,7 @@ func (self *King) GetMoves() []defs.MovePattern {
 			},
 			{
 				MoveType: defs.MoveOnly,
-				Pattern:  defs.MoveCastling{},
+				Pattern:  defs.PatternCastling{},
 			},
 		}
 	}

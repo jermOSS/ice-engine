@@ -20,7 +20,7 @@ func (self *Bishop) GetMoves() []defs.MovePattern {
 	return []defs.MovePattern{
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveDiagonalSlide{
+			Pattern: defs.PatternDiagonalSlide{
 				Start: defs.Position{
 					X: self.X - 1,
 					Y: self.Y + 1,
@@ -30,7 +30,7 @@ func (self *Bishop) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveDiagonalSlide{
+			Pattern: defs.PatternDiagonalSlide{
 				Start: defs.Position{
 					X: self.X + 1,
 					Y: self.Y + 1,
@@ -40,7 +40,7 @@ func (self *Bishop) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveDiagonalSlide{
+			Pattern: defs.PatternDiagonalSlide{
 				Start: defs.Position{
 					X: self.X - 1,
 					Y: self.Y - 1,
@@ -50,7 +50,7 @@ func (self *Bishop) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveDiagonalSlide{
+			Pattern: defs.PatternDiagonalSlide{
 				Start: defs.Position{
 					X: self.X + 1,
 					Y: self.Y - 1,

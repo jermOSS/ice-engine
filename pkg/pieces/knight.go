@@ -20,7 +20,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 	return []defs.MovePattern{
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X - 1,
 					Y: self.Y + 2,
@@ -29,7 +29,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X + 1,
 					Y: self.Y + 2,
@@ -38,7 +38,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X - 2,
 					Y: self.Y + 1,
@@ -47,7 +47,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X + 2,
 					Y: self.Y + 1,
@@ -56,7 +56,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X - 2,
 					Y: self.Y - 1,
@@ -65,7 +65,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X + 2,
 					Y: self.Y - 1,
@@ -74,7 +74,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X - 1,
 					Y: self.Y - 2,
@@ -83,7 +83,7 @@ func (self *Knight) GetMoves() []defs.MovePattern {
 		},
 		{
 			MoveType: defs.Regular,
-			Pattern: defs.MoveJump{
+			Pattern: defs.PatternJump{
 				Position: defs.Position{
 					X: self.X + 1,
 					Y: self.Y - 2,

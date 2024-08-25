@@ -99,7 +99,7 @@ func generateMaps(pieces []defs.Piece) (
 
 // Ignores that some pieces can be captured and some not, should serve only as rough estimeate
 func getSlideMobility(move defs.MovePattern, XMap map[int64][]defs.Piece, YMap map[int64][]defs.Piece) (evaluation int64) {
-	slide := move.Pattern.(defs.MoveSlide)
+	slide := move.Pattern.(defs.PatternSlide)
 	evaluation = maxMobilityAddition
 	switch slide.Direction {
 	case defs.Top:
@@ -141,7 +141,7 @@ func getSlideMobility(move defs.MovePattern, XMap map[int64][]defs.Piece, YMap m
 }
 
 func getJumpMobility(move defs.MovePattern, color defs.Color, XYMap map[int64]map[int64]defs.Piece) int64 {
-	jump := move.Pattern.(defs.MoveJump)
+	jump := move.Pattern.(defs.PatternJump)
 	if XYMap[jump.Position.X] == nil || XYMap[jump.Position.X][jump.Position.Y] == nil {
 		if move.MoveType == defs.CheckAndCapture {
 			return 0
@@ -159,7 +159,7 @@ func getJumpMobility(move defs.MovePattern, color defs.Color, XYMap map[int64]ma
 }
 
 func getDiagonalSlideMobility(move defs.MovePattern, IMap map[int64][]defs.Piece, JMap map[int64][]defs.Piece) (evaluation int64) {
-	slide := move.Pattern.(defs.MoveDiagonalSlide)
+	slide := move.Pattern.(defs.PatternDiagonalSlide)
 	slide_start_I := slide.Start.GetI()
 	slide_start_J := slide.Start.GetJ()
 	evaluation = maxMobilityAddition
@@ -203,7 +203,7 @@ func getDiagonalSlideMobility(move defs.MovePattern, IMap map[int64][]defs.Piece
 }
 
 func getPawnJumpMobility(move defs.MovePattern, XYMap map[int64]map[int64]defs.Piece) int64 {
-	jump := move.Pattern.(defs.MovePawnJump)
+	jump := move.Pattern.(defs.PatternPawnJump)
 
 	var bonus int64 = 0
 	if XYMap[jump.EnPassant.X] == nil || XYMap[jump.EnPassant.X][jump.EnPassant.Y] == nil {
@@ -226,13 +226,13 @@ func getMobilityBonus(
 
 	for _, move := range piece.GetMoves() {
 		switch move.Pattern.(type) {
-		case defs.MoveSlide:
+		case defs.PatternSlide:
 			bonus += getSlideMobility(move, XMap, YMap)
-		case defs.MoveJump:
+		case defs.PatternJump:
 			bonus += getJumpMobility(move, piece.GetColor(), XYMap)
-		case defs.MoveDiagonalSlide:
+		case defs.PatternDiagonalSlide:
 			bonus += getDiagonalSlideMobility(move, IMap, JMap)
-		case defs.MovePawnJump:
+		case defs.PatternPawnJump:
 			bonus += getPawnJumpMobility(move, XYMap)
 		}
 	}

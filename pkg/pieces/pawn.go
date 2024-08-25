@@ -23,7 +23,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 			return []defs.MovePattern{
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X - 1,
 							Y: self.Y + 1,
@@ -32,7 +32,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X + 1,
 							Y: self.Y + 1,
@@ -41,7 +41,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.MoveOnly,
-					Pattern: defs.MovePawnJump{
+					Pattern: defs.PatternPawnJump{
 						Position: defs.Position{
 							X: self.X,
 							Y: self.Y + 2,
@@ -57,7 +57,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 			return []defs.MovePattern{
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X - 1,
 							Y: self.Y + 1,
@@ -66,7 +66,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X + 1,
 							Y: self.Y + 1,
@@ -75,7 +75,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.MoveOnly,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X,
 							Y: self.Y + 1,
@@ -89,7 +89,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 			return []defs.MovePattern{
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X + 1,
 							Y: self.Y - 1,
@@ -98,7 +98,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X - 1,
 							Y: self.Y - 1,
@@ -107,7 +107,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.MoveOnly,
-					Pattern: defs.MovePawnJump{
+					Pattern: defs.PatternPawnJump{
 						Position: defs.Position{
 							X: self.X,
 							Y: self.Y - 2,
@@ -123,7 +123,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 			return []defs.MovePattern{
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X + 1,
 							Y: self.Y - 1,
@@ -132,7 +132,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.CheckAndCapture,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X - 1,
 							Y: self.Y - 1,
@@ -141,7 +141,7 @@ func (self *Pawn) GetMoves() []defs.MovePattern {
 				},
 				{
 					MoveType: defs.MoveOnly,
-					Pattern: defs.MoveJump{
+					Pattern: defs.PatternJump{
 						Position: defs.Position{
 							X: self.X,
 							Y: self.Y - 1,
